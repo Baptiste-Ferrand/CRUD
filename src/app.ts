@@ -3,7 +3,6 @@ import dotenv from "dotenv";
 import bodyParser from "body-parser";
 import morgan from "morgan";
 import restaurantRoutes from "./routes/index";
-import { createClient } from "@supabase/supabase-js";
 
 dotenv.config();
 // APP CEST EXPRESS
