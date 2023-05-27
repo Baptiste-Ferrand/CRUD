@@ -8,6 +8,7 @@ const dotenv_1 = __importDefault(require("dotenv"));
 const body_parser_1 = __importDefault(require("body-parser"));
 const morgan_1 = __importDefault(require("morgan"));
 const index_1 = __importDefault(require("./routes/index"));
+const contactRoutes_1 = __importDefault(require("./routes/contactRoutes"));
 dotenv_1.default.config();
 // APP CEST EXPRESS
 const app = (0, express_1.default)();
@@ -19,6 +20,8 @@ app.use(body_parser_1.default.urlencoded({ extended: true }));
 app.use(body_parser_1.default.json());
 //ROUTE RESTAURANTS
 app.use("/restaurants", index_1.default);
+//ROUTE CONTACT
+app.use("/contact", contactRoutes_1.default);
 app.listen(port, () => {
     console.log(`⚡️[server]: Server is running at http://localhost:${port}`);
 });

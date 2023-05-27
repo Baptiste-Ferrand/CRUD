@@ -10,9 +10,9 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.updateRestaurantById = exports.deleteRestaurantById = exports.createNewRestaurant = exports.getRestaurantById = exports.getAllRestaurants = void 0;
-// function call base de donnee avec le ,ethod CRUD ---> METHODS
 const supabase_js_1 = require("@supabase/supabase-js");
-const supabase = (0, supabase_js_1.createClient)("https://levcaphemaodbyzsjbda.supabase.co", "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImxldmNhcGhlbWFvZGJ5enNqYmRhIiwicm9sZSI6ImFub24iLCJpYXQiOjE2ODMzODg5MzYsImV4cCI6MTk5ODk2NDkzNn0.LM5sSmRd7uQHAIMl0h51W--oTHDqVhaeU_LYVgqU1kE");
+require('dotenv').config();
+const supabase = (0, supabase_js_1.createClient)(process.env.supabaseURL, process.env.supabaseKEY);
 function getAllRestaurants() {
     var _a;
     return __awaiter(this, void 0, void 0, function* () {

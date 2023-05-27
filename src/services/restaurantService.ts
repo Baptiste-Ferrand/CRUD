@@ -1,9 +1,9 @@
-// function call base de donnee avec le ,ethod CRUD ---> METHODS
 import { createClient } from "@supabase/supabase-js";
+require('dotenv').config()
 
 const supabase = createClient(
-  "https://levcaphemaodbyzsjbda.supabase.co",
-  "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImxldmNhcGhlbWFvZGJ5enNqYmRhIiwicm9sZSI6ImFub24iLCJpYXQiOjE2ODMzODg5MzYsImV4cCI6MTk5ODk2NDkzNn0.LM5sSmRd7uQHAIMl0h51W--oTHDqVhaeU_LYVgqU1kE"
+  process.env.supabaseURL,
+  process.env.supabaseKEY
 );
 
 type Restaurant = {

@@ -1,4 +1,3 @@
-// regarde les body si t'es données sont la, controlle que le donnee correcpond a tes interface avant appeler les service
 import { Request, Response } from "express";
 import {
   getAllRestaurants,
@@ -7,7 +6,6 @@ import {
   updateRestaurantById,
   deleteRestaurantById,
 } from "../services/restaurantService";
-import { log } from "console";
 
 export async function getRestaurant(
   req: Request,

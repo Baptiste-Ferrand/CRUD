@@ -3,6 +3,7 @@ import dotenv from "dotenv";
 import bodyParser from "body-parser";
 import morgan from "morgan";
 import restaurantRoutes from "./routes/index";
+import contactRoutes from "./routes/contactRoutes";
 
 dotenv.config();
 // APP CEST EXPRESS
@@ -16,6 +17,9 @@ app.use(bodyParser.json());
 
 //ROUTE RESTAURANTS
 app.use("/restaurants", restaurantRoutes);
+
+//ROUTE CONTACT
+app.use("/contact", contactRoutes);
 
 app.listen(port, () => {
   console.log(`⚡️[server]: Server is running at http://localhost:${port}`);
