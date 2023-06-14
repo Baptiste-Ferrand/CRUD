@@ -141,7 +141,7 @@ type csv = {
     tel: string;
     email: string;
 };
-  function readcsv(){
+  export function readcsv(){
     const csvFilePath = path.resolve(__dirname, "../../assets/contacts_2.csv");
     const headers = ['title', 'name', 'adress', 'realAdress', 'departement', 'country', 'tel', 'email'];
     const fileContent = fs.readFileSync(csvFilePath, { encoding: 'utf-8' });

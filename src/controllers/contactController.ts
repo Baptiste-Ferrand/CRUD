@@ -2,7 +2,7 @@ import { Request, Response } from "express";
 import {
     createNewContact, deleteContactById,
     getAllContact,
-    getContactById as getOneContact, updateContactById
+    getContactById as getOneContact, readcsv, updateContactById
 } from "../services/contactService";
 
 
@@ -94,4 +94,24 @@ export async function updateContact(
     } catch (error) {
         res.status(500).send("Error updating restaurant");
     }
+}
+
+export async function fillContact(
+    req: Request,
+    res: Response
+){
+    try {
+        const contacts = await getAllContact();
+        console.log(contacts.length)
+        if (contacts.length <=0){
+            readcsv()
+            res.status(201).send("Data Base Filled")
+        }else {
+            res.status(500).send("Data Base Already Fill")
+        }
+    } catch (error) {
+        console.log(error);
+        res.status(500).send("Error getting contact");
+    }
+
 }

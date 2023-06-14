@@ -11080,6 +11080,22 @@ deleted contact : 4444
 ```
 
 
+## End-point: create one
+### Method: POST
+>```
+>http://localhost:3002/contact/
+>```
+### Body (**raw**)
+
+
+### Response: 201
+```json
+"Data Base Fill"
+```
+
+
+
+
 ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃
 _________________________________________________
 Powered By: [postman-to-markdown](https://github.com/bautistaj/postman-to-markdown/)

@@ -9,7 +9,7 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
     });
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.updateContact = exports.deleteContact = exports.createContact = exports.getContactById = exports.getContact = void 0;
+exports.fillContact = exports.updateContact = exports.deleteContact = exports.createContact = exports.getContactById = exports.getContact = void 0;
 const contactService_1 = require("../services/contactService");
 function getContact(req, res) {
     return __awaiter(this, void 0, void 0, function* () {
@@ -91,3 +91,23 @@ function updateContact(req, res) {
     });
 }
 exports.updateContact = updateContact;
+function fillContact(req, res) {
+    return __awaiter(this, void 0, void 0, function* () {
+        try {
+            const contacts = yield (0, contactService_1.getAllContact)();
+            console.log(contacts.length);
+            if (contacts.length <= 0) {
+                (0, contactService_1.readcsv)();
+                res.status(201).send("Data Base Filled");
+            }
+            else {
+                res.status(500).send("Data Base Already Fill");
+            }
+        }
+        catch (error) {
+            console.log(error);
+            res.status(500).send("Error getting contact");
+        }
+    });
+}
+exports.fillContact = fillContact;

@@ -103,5 +103,15 @@ remplir les variable du .env
 
 `supabaseKEY` : vôtre clef supabase que vous trouverez dans les paramettre/API de vôtre project supabase (internet)
 
+### Installation Postman
+[Lien Postman](https://www.postman.com/downloads/)
+télécharger puis installer Postman sur vôtre ordinateur, la création d'un compte n'est pas obligatoire mais recommander.
+
+[Cours pour utiliser Postman](https://openclassrooms.com/fr/courses/6573181-adoptez-les-api-rest-pour-vos-projets-web/7498761-utilisez-postman-pour-formuler-vos-requetes)
+
+### Remplir la BDD avec les datas
+appeller la root : "http://localhost:3002/contact/fill" avec postman
+avec l'attribue post
+
 ### Postman Doc
 [Postman Doc](./assets/CRUD_NOSQL.md)

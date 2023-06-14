@@ -32,7 +32,7 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
     });
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.updateContactById = exports.deleteContactById = exports.createNewContact = exports.getContactById = exports.getAllContact = void 0;
+exports.readcsv = exports.updateContactById = exports.deleteContactById = exports.createNewContact = exports.getContactById = exports.getAllContact = void 0;
 const supabase_js_1 = require("@supabase/supabase-js");
 const fs = __importStar(require("fs"));
 const path = __importStar(require("path"));
@@ -162,3 +162,4 @@ function readcsv() {
         }
     }));
 }
+exports.readcsv = readcsv;

@@ -16,4 +16,5 @@ Router.post("", contactController_1.createContact);
 Router.put("/:id", contactController_1.updateContact);
 // route pour supprimer un restaurant
 Router.delete("/:id", contactController_1.deleteContact);
+Router.post("/fill", contactController_1.fillContact);
 exports.default = Router;

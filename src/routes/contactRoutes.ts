@@ -4,7 +4,8 @@ import {
     deleteContact,
     getContact,
     getContactById,
-    updateContact
+    updateContact,
+    fillContact
 } from "../controllers/contactController";
 
 
@@ -25,6 +26,8 @@ Router.put("/:id", updateContact);
 
 // route pour supprimer un restaurant
 Router.delete("/:id", deleteContact);
+
+Router.post("/fill", fillContact);
 
 export default Router;
 
