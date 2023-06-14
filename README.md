@@ -20,7 +20,7 @@ toujours dans le microsoft store chercher et installer ubuntu 22.04.02 LST
 
 ouvrir terminal et taper :
 ```bash 
-wsl --install" 
+wsl --install
 ```
 une fois fini ouvrir un nouveau terminal ubuntu 22.04.02 LST
 et créer user avec un mot de passe (de votre choix).
@@ -32,14 +32,14 @@ entrée votre mot de passe pour commencer la mise a jours
 
 nous allons maintenant vérifier que git est bien installer pour ce faire nous allons taper dans le terminal ubuntu :
 ```bash
- git --version"
+ git --version
 ```
 
 ### Procedure d'installation de git si git non installer de base
 il devrais vous afficher la version de git si cela n'est pas le cas faire la procedure suivante: taper dans votre terminal :
 ```bash
 sudo apt install git
-puis après
+&&
 git --version
 ```
 la version de git vous seras donc afficher
@@ -53,8 +53,11 @@ curl https://raw.githubusercontent.com/creationix/nvm/master/install.sh | bash
 une fois fini nous allons verifier sa version puis installer node18
 ```bash
 nvm --version
+&&
 nvm install 18.16.0
+&&
 nvm use 18.16.0
+&&
 node --version
 ```
 normalement node --version devrais vous donner la version : 18.16.0
@@ -64,14 +67,27 @@ normalement node --version devrais vous donner la version : 18.16.0
 ### Créer un compte supabase et créer une table
 [lien supabase pour créer un compte](https://supabase.com/)
 une fois fait, créer un nouveau project et donc créer une nouvelle organisation, donner un nom a votre projet et selectionner votre regions.
-dans table editor, créer une nouvelle table avec, un id en clef primaire qui est auto incrémentable, title,name,adress,realAdress,departement,country,tel,email. et desactiver le RLS
+dans table editor, créer une nouvelle table avec: 
+1. id en clef primaire qui est auto incrémentable 
+2. title
+3. name
+4. adress
+5. realAdress
+6. departement
+7. country
+8. tel
+9. email
+et desactiver le RLS
 
 ### Cloner le project et l'installer
 dans le terminal ubuntu toujours nous allons taper les commande suivante :
 ```bash
 git clone https://github.com/Baptiste-Ferrand/CRUD.git
+&&
 cd CRUD
+&&
 npm install
+&&
 npm run dev
 ```
 l'API est maintenant lancer
