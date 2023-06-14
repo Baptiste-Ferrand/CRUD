@@ -1,4 +1,8 @@
 import { createClient } from "@supabase/supabase-js";
+import * as fs from "fs";
+import * as path from "path";
+import {parse} from "csv-parse";
+
 require('dotenv').config()
 
 
@@ -60,7 +64,7 @@ export async function createNewContact(
     );
 
     try {
-        const error = await supabase.from("test").insert({
+        const error = await supabase.from("contact").insert({
             title,
             name,
             adress,
@@ -124,4 +128,46 @@ function mapToRestaurant(record: any): Contact {
         tel: record.tel,
         email: record.email,
     };
+}
+
+
+type csv = {
+    title: string;
+    name: string;
+    adress: string;
+    realAdress: string;
+    departement: string;
+    country: string;
+    tel: string;
+    email: string;
+};
+  function readcsv(){
+    const csvFilePath = path.resolve(__dirname, "../../assets/contacts_2.csv");
+    const headers = ['title', 'name', 'adress', 'realAdress', 'departement', 'country', 'tel', 'email'];
+    const fileContent = fs.readFileSync(csvFilePath, { encoding: 'utf-8' });
+    parse(fileContent)
+    parse(fileContent, {
+        delimiter: ',',
+        columns: headers,
+    }, async (error, result: csv[]) => {
+        if (error) {
+            console.error(error);
+        }
+        // console.log("Result", result);
+        let i = 0;
+        for (const item of result) {
+            i++
+            const title = item.title;
+            const name = item.name;
+            const adress = item.adress;
+            const realAdress = item.realAdress;
+            const departement = item.departement;
+            const country = item.country;
+            const tel = item.tel;
+            const email = item.email;
+            await createNewContact(title, name, adress, realAdress, departement, country, tel, email).then(r => console.log(r))
+            console.log(i)
+
+        }
+    });
 }
