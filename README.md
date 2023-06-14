@@ -67,17 +67,18 @@ normalement node --version devrais vous donner la version : 18.16.0
 ### Créer un compte supabase et créer une table
 [lien supabase pour créer un compte](https://supabase.com/)
 une fois fait, créer un nouveau project et donc créer une nouvelle organisation, donner un nom a votre projet et selectionner votre regions.
-dans table editor, créer une nouvelle table avec: 
-1. id en clef primaire qui est auto incrémentable 
-2. title
-3. name
-4. adress
-5. realAdress
-6. departement
-7. country
-8. tel
-9. email
-et desactiver le RLS
+dans table editor, créer une nouvelle table **contact** avec:
+* id en clef primaire qui est auto incrémentable 
+* title
+* name
+* adress
+* realAdress
+* departement
+* country
+* tel
+* email
+
+Et desactiver le RLS
 
 ### Cloner le project et l'installer
 dans le terminal ubuntu toujours nous allons taper les commande suivante :
@@ -92,8 +93,15 @@ npm run dev
 ```
 l'API est maintenant lancer
 
+### Ajouter et mêttre en place le .env
+copier le .env.example puis coller le au même endroit sous le nom de .env
+remplir les variable du .env
 
-`API_KEY`
+`PORT` : 3002
 
-`ANOTHER_API_KEY`
+`supabaseURL` : vôtre lien supabaseUrl que vous trouverez dans les paramettre/API de vôtre project supabase (internet)
 
+`supabaseKEY` : vôtre clef supabase que vous trouverez dans les paramettre/API de vôtre project supabase (internet)
+
+### Postman Doc
+[Postman Doc](./assets/CRUD_NOSQL.md)
