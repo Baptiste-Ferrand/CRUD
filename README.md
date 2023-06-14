@@ -61,9 +61,10 @@ normalement node --version devrais vous donner la version : 18.16.0
 
 
 
-### Créer un compte supabase et créer un table
+### Créer un compte supabase et créer une table
 [lien supabase pour créer un compte](https://supabase.com/)
-
+une fois fait, créer un nouveau project et donc créer une nouvelle organisation, donner un nom a votre projet et selectionner votre regions.
+dans table editor, créer une nouvelle table avec, un id en clef primaire qui est auto incrémentable, title,name,adress,realAdress,departement,country,tel,email. et desactiver le RLS
 
 ### Cloner le project et l'installer
 dans le terminal ubuntu toujours nous allons taper les commande suivante :
